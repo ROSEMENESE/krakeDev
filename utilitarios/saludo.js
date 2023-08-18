@@ -2,10 +2,10 @@ saludar=function(){
     //recuperar el valor de la caja de texto txtNombre
     let nombre=recuperarTexto("txtNombre");
     //recuperar el valor de la caja de texto txtApellido
-    let apellido=recuperarTexto("txtApellido")
+    let apellido=recuperarTexto("txtApellido");
 
    let edad=recuperarInt("txtEdad");
-   let estatura=recuperarFloat("txtEstatura")
+   let estatura=recuperarFloat("txtEstatura");
 }
 recuperarTexto=function(idComponente){
     let componente;
