@@ -1,0 +1,69 @@
+body{
+    background-color: blueviolet;
+    background-image: url(./imagenes/juego.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.opc{
+    
+    font-size: 40px;
+    color: beige;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 50px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.titulo{
+    font-family: fantasy;
+    font-size: 80px;
+    color:black;
+    background-color:violet;
+    margin-left: 10px;
+    margin-right: 50px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.acerca{
+    
+    color:blue;
+    font-size: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-right: 40px;
+}
+
+.logo{
+    width: 100px;
+    margin: 20px;
+}
+
+.contenedorImagen{
+    background-color:blueviolet;
+    background-size: cover;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 80px;
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
+.contenedorImagen2{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 50px;
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
