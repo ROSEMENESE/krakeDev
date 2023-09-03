@@ -26,3 +26,11 @@ jugar = function (seleccionado) {
         }
     }
 } 
+
+limpiar = function () {
+    mostrarTexto("lblResultado", "");
+    mostrarTexto("puntajeUsuario", "");
+    mostrarTexto("puntajeComputador", "");
+    mostrarTexto("resultJuego", "");
+    mostrarImagen("imagenJuego","")
+}

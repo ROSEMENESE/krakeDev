@@ -103,3 +103,24 @@ body{
     padding-right: 40px; 
    
 }
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.contenedorBoton{
+    display: flex;
+    flex:1;
+    justify-content: left;
+}
+.estiloBoton{
+    background-color: rosybrown; 
+    border: none;
+    color:red;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+ }
