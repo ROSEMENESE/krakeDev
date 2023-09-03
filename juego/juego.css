@@ -81,3 +81,25 @@ body{
     flex-direction: column;
     justify-content: center;
 }
+.resultadoJuego{
+    font-family: fantasy;
+    font-size: 50px;
+    color:orange;
+    margin-left: 10px;
+    margin-right: 50px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.areaGanar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-right: 40px; 
+   
+}
