@@ -31,3 +31,8 @@ guardarPalabra = function () {
         alert("DEBE INGRESAR UNA PALABRA DE 5 LETRAS MAYUSCULAS");
     }
 }
+
+mostrarLetra=function(letra,posicion){
+    let caracter;
+    mostrarTexto("div"+posicion,letra); 
+}
