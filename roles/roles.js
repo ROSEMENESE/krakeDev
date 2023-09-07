@@ -183,12 +183,22 @@ guardar = function () {
             if (empleadoAgregado) {
                 alert("EMPLEADO GUARDADO CORRECTAMENTE");
                 mostrarEmpleados();
+                deshabilitarFunciones();
+                
             } else {
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA:" + " " + cedulaNueva);
             }
         }
     }
 
+}
+
+deshabilitarFunciones=function(){
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
 
 
