@@ -4,6 +4,7 @@ let empleados = [
     { cedula: "1786963254", nombre: "Leonel", apellido: "Enriquez", sueldo: 700.0 }
 ]
 let esNuevo = false;
+let roles=[];
 
 mostrarOpcionEmpleado = function () {
     mostrarComponente("divEmpleado");
@@ -17,6 +18,7 @@ mostrarOpcionRol = function () {
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
+    deshabilitarComponente("GuardarRol");
 }
 
 mostrarOpcionResumen = function () {
@@ -283,5 +285,63 @@ calcularRol = function () {
         let total = calcularValorAPagar(sueldo, aporte, descuento);
         mostrarTexto("infoPago", total);
     }
+    habilitarComponente("GuardarRol");
 
 }
+
+buscarRol = function (cedula) {
+    let elementoRol;
+    let rolEncontrado = null;
+    for (let i = 0; i < roles.length; i++) {
+      elementoRol = roles[i];
+      if (elementoRol.cedula == cedula) {
+        rolEncontrado = elementoRol;
+        break;
+      }
+    }
+    return rolEncontrado;
+  }
+
+  agregarRol = function (rol) {
+    let respuestaRol;
+    let validar = false;
+    respuestaRol = buscarRol(rol.cedula);
+    if (respuestaRol == null) {
+      roles.push(rol);
+      validar = true;
+    } else {
+      validar = false;
+    }
+    return validar;
+  }
+
+  calcularAporteEmpleador = function (sueldoDelEmpleado) {
+    let aporterIess;
+    aporterIess = (sueldoDelEmpleado * 11.15) / 100;
+    return aporterIess;
+  }
+
+  guardarRol = function () {
+    let valorAPagar = recuperarFloatDiv("infoPago");
+    let aporteEmpleado = recuperarFloatDiv("infoIESS");
+    let nombre = recuperarTextoDiv("infoNombre");
+    let cedula = recuperarTextoDiv("infoCedula");
+    let sueldo = recuperarFloatDiv("infoSueldo");
+  
+    let aporteEmpleador = calcularAporteEmpleador(sueldo);
+  
+    let rolNuevo = {};
+    rolNuevo.cedula = cedula;
+    rolNuevo.nombre = nombre;
+    rolNuevo.sueldo = sueldo;
+    rolNuevo.valorAPagar = valorAPagar;
+    rolNuevo.aporte = aporteEmpleado;
+    rolNuevo.aporterIess = aporteEmpleador;
+  
+    let rol1 = agregarRol(rolNuevo);
+  
+    if (rol1) {
+      alert("EL ROL HA SIDO GUARDADO");
+      deshabilitarComponente("GuardarRol");
+    }
+  }
