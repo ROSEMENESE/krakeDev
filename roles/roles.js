@@ -26,6 +26,8 @@ mostrarOpcionResumen = function () {
     mostrarComponente("divResumen");
     ocultarComponente("divEmpleado");
     ocultarComponente("divRol");
+    mostrarRoles();
+    mostrarTotales();
 }
 
 mostrarEmpleados = function () {
@@ -317,9 +319,9 @@ agregarRol = function (rol) {
 }
 
 calcularAporteEmpleador = function (sueldoDelEmpleado) {
-    let aporterIess;
-    aporterIess = (sueldoDelEmpleado * 11.15) / 100;
-    return aporterIess;
+    let aporteIess;
+    aporteIess = (sueldoDelEmpleado * 11.15) / 100;
+    return aporteIess;
 }
 
 guardarRol = function () {
@@ -337,7 +339,7 @@ guardarRol = function () {
     rolNuevo.sueldo = sueldo;
     rolNuevo.valorAPagar = valorAPagar;
     rolNuevo.aporte = aporteEmpleado;
-    rolNuevo.aporterIess = aporteEmpleador;
+    rolNuevo.aportegIess = aporteEmpleador;
 
     let rol1 = agregarRol(rolNuevo);
 
@@ -375,7 +377,7 @@ mostrarRoles = function () {
             elementoRol.aporte +
             "</td>" +
             "<td>" +
-            elementoRol.aporteIess +
+            elementoRol.aportegIess +
             "</td>" +
             "</tr>";
     }
@@ -388,14 +390,17 @@ mostrarTotales = function () {
     let totalEmpleado = 0;
     let totalEmpleador = 0;
     let totalPagar = 0;
-  
+
     for (let i = 0; i < roles.length; i++) {
-      totalEmpleado += roles[i].aporteIess;
-      totalEmpleador += roles[i].aporte;
-      totalPagar += roles[i].valorAPagar;
+        totalEmpleado += roles[i].aporte;
+        totalEmpleador += roles[i].aportegIess;
+        totalPagar += roles[i].valorAPagar;
     }
-  
+
     mostrarTexto("infoTotalPago", totalPagar);
     mostrarTexto("infoAporteEmpresa", totalEmpleador);
     mostrarTexto("infoAporteEmpleado", totalEmpleado);
-  }
+
+    let totalNomina = totalEmpleado + totalEmpleador + totalPagar;
+    mostrarTexto("infoNomina", totalNomina);
+}
