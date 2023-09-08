@@ -230,3 +230,15 @@ ejecutarBusqueda = function () {
         deshabilitarComponente("txtCedula");
     }
 }
+limpiar = function () {
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    mostrarTexto("lblErrorCedula", "");
+    mostrarTexto("lblErrorNombre", "");
+    mostrarTexto("lblErrorApellido", "");
+    mostrarTexto("lblErrorSueldo", "");
+    deshabilitarFunciones();
+    esNuevo = false;
+}
